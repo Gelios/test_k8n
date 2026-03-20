@@ -1,0 +1,15 @@
+# Laravel
+src/vendor/
+src/node_modules/
+src/.env
+src/storage/logs/
+src/storage/framework/
+
+# OS
+.DS_Store
+
+# Docker
+*.log
+
+# IDE
+.idea
