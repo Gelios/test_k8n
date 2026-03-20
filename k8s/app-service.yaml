@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app
+  namespace: test-k8s
+spec:
+  selector:
+    app: laravel
+  ports:
+    - port: 8000
+      nodePort: 30007
+      targetPort: 8080
+  type: NodePort
+  
