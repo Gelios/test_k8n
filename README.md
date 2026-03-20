@@ -57,3 +57,9 @@ make down
 
 * Using `php artisan serve` instead of nginx/php-fpm (simplification)
 * Minimal setup to keep the solution straightforward
+
+---
+
+## Health checks
+
+* Liveness and readiness probes are configured using the /api/health endpoint.
