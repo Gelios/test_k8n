@@ -53,6 +53,13 @@ make down
 
 ---
 
+## Notes
+
+* Application is exposed using a NodePort service
+* k3d load balancer is configured to map port `30007` to the host
+
+---
+
 ## Tradeoffs
 
 * Using `php artisan serve` instead of nginx/php-fpm (simplification)
