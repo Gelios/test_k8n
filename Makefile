@@ -25,12 +25,15 @@ deploy:
 	kubectl apply -f k8s/app-deployment.yaml
 	kubectl apply -f k8s/app-service.yaml
 
+wait:
+	kubectl rollout status statefulset/mysql -n $(NAMESPACE)
+	kubectl rollout status deployment/app -n $(NAMESPACE)
+
 status:
 	kubectl get all -n $(NAMESPACE)
 	kubectl get pvc -n $(NAMESPACE)
 
-up: cluster-delete cluster-create build image-import deploy
-	@echo "Application should be available in 30s"
+up: cluster-delete cluster-create build image-import deploy wait
 	@echo "Check resources with: make status"
 
 down:
